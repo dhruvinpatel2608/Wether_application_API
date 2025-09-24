@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App UI</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 420px;
+  height: 90vh; /* fit viewport */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  flex: 0 0 auto;
+}
+.header h2 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  flex: 0 0 auto;
+}
+.search-box input {
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+}
+.search-box button {
+  padding: 10px;
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Weather Result */
+.weather-result {
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.15);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  flex: 1 1 auto; /* fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+.weather-icon {
+  font-size: 4rem;
+  margin-bottom: 5px;
+  color: #ffeb3b;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+.temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 5px 0;
+}
+.desc {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  opacity: 0.9;
+}
+.location {
+  font-size: 1rem;
+  opacity: 0.8;
+  color: #fff;
+}
+
+/* Responsive */
+@media screen and (max-width: 450px) {
+  .weather-icon { font-size: 3rem; }
+  .temp { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h2>🌤 Weather App</h2>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Enter City" id="city">
+    <input type="text" value="IN" id="country">
+    <button type="submit" id="convertBtn">Get Weather</button>
+  </div>
+
+  <div class="weather-result">
+    <div class="weather-icon">⛅</div>
+    <div class="temp">--°C</div>
+    <div class="desc">Description</div>
+    <div class="location">City, Country</div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
